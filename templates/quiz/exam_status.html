@@ -1,0 +1,24 @@
+{% extends 'quiz/adminbase.html' %}
+{% block content %}
+<div class="container">
+  <h2>Exam Status</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Exam Date</th>
+        <th>Exam Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for exam in exams %}
+      <tr>
+        <td>{{ exam.course_name }}</td>
+        <td>{{ exam.exam_date }}</td>
+        <td>{{ exam.exam_status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

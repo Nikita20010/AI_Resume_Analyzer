@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+  .form-container {
+  border: 3px solid #ccc;
+  padding: 10px;
+  margin : 100px;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br>
+
+  <center>
+    <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+
+    <div class="form-container" >
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_Name">Name:</label>
+          {{ form.Name }}
+        </div>
+        <div class="form-group">
+          <label for="id_Email">Email:</label>
+          {{ form.Email }}
+        </div>
+        <div class="form-group">
+          <label for="id_Message">Message:</label>
+          {{ form.Message }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+      </form>
+    </div>
+    
+  </center>
+
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>

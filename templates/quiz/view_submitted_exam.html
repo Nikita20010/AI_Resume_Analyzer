@@ -1,0 +1,26 @@
+{% extends 'quiz/adminbase.html' %}
+{% block content %}
+<div class="container">
+  <h2>Submitted Exam Details</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Marks Obtained</th>
+        <th>Exam Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for exam_result in exam_results %}
+      <tr>
+        <td>{{ exam_result.student.user.username }}</td>
+        <td>{{ exam_result.exam.course_name }}</td>
+        <td>{{ exam_result.marks }}</td>
+        <td>{{ exam_result.exam_status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

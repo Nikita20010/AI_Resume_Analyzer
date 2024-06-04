@@ -1,0 +1,95 @@
+{% extends 'quiz/adminbase.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+<br><br>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 class="panel-title">View Marks</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+      <thead>
+        <tr>
+
+          <th>Exam Name</th>
+          <th>Total Marks</th>
+          <th>Attempt Number</th>
+          <th>Exam Date</th>
+        </tr>
+      </thead>
+      {% for t in results %}
+      <tr>
+
+        <td> {{ t.exam }}</td>
+        <td> {{ t.marks }}</td>
+        <td>Attempt {{ forloop.counter }}</td>
+        <td> {{ t.date }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="container">
+    <!-- Display Highest, Medium, and Lowest Marks -->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h6 class="panel-title">Rank Board</h6>
+      </div>
+      <div class="panel-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Marks</th>
+              <th>Rank</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for result in all_results %}
+            <tr>
+              <td>{{ result.student.user.first_name }} {{ result.student.user.last_name }}</td>
+              <td>{{ result.marks }}</td>
+              <td>
+                {% if result.marks == highest_marks %}
+                  High
+                {% elif result.marks == medium_marks %}
+                  Medium
+                {% elif result.marks == lowest_marks %}
+                  Low
+                {% endif %}
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="3">No results available</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+
+<br><br><br><br><br><br>
+{% endblock content %}

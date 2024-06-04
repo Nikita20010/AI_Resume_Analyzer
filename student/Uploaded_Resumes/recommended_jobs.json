@@ -1,0 +1,142 @@
+{
+    "jobs": [
+        {
+            "title": "Software Engineer",
+            "Skills": "Python",
+            "company": "ABC Inc.",
+            "location": "New York"
+        },
+        {
+            "title": "Data Scientist",
+            "Skills" : "Machine learning, Python, Data Science",
+            "company": "XYZ Corp.",
+            "location": "San Francisco"
+        },
+        {
+            "title": "Web Developer",
+            "Skills" : "Php, HTML, CSS",
+            "company": "123 Tech",
+            "location": "Seattle"
+        },
+        {
+            "title": "Financial Analyst",
+            "Skills" : "Finance, Accounting, Reporting, Budgeting",
+            "company": "Financial Services Inc.",
+            "location": "New York"
+        },
+        {
+            "title": "Compliance Officer",
+            "Skills" : "Compliance, Regulatory, Policies, Controls",
+            "company": "Regulatory Compliance Co.",
+            "location": "Washington D.C."
+        },
+        {
+            "title": "Operations Manager",
+            "Skills" : "Operations, Process, Metrics, Relationship building",
+            "company": "Operations Management LLC",
+            "location": "Chicago"
+        },
+        {
+            "title": "Tax Consultant",
+            "Skills" : "Tax, Regulatory compliance, Finance",
+            "company": "Tax Advisory Group",
+            "location": "Los Angeles"
+        },
+        {
+            "title": "Business Analyst",
+            "Skills" : "Analytics, Reporting, System, Metrics",
+            "company": "Business Solutions Inc.",
+            "location": "Boston"
+        },
+        {
+            "title": "Software Developer",
+            "Skills": "C, C++, Java",
+            "company": "Tech Solutions",
+            "location": "New York"
+        },
+        {
+            "title": "Full Stack Developer",
+            "Skills": "C#, AngularJS, HTML, CSS",
+            "company": "Web Solutions Inc.",
+            "location": "San Francisco"
+        },
+        {
+            "title": "Java Developer",
+            "Skills": "Java, Spring, Hibernate",
+            "company": "Java Solutions",
+            "location": "Seattle"
+        },
+        {
+            "title": "Translator",
+            "Skills": "Spanish, French, English",
+            "company": "Language Services Co.",
+            "location": "Paris"
+        },
+        {
+            "title": "Technical Writer",
+            "Skills": "Technical, Publishing, English",
+            "company": "Tech Publications",
+            "location": "London"
+        },
+        {
+            "title": "Programming Instructor",
+            "Skills": "Programming, Teaching, English",
+            "company": "Tech Education Institute",
+            "location": "Boston"
+        },
+        {
+            "title": "Software Engineer",
+            "Skills": "Java, Programming, C, C++, Shell, SQL, Pl/SQL",
+            "company": "Tech Solutions",
+            "location": "New York"
+        },
+        {
+            "title": "Systems Administrator",
+            "Skills": "Operating systems, Linux, Windows, Unix, Administration, Troubleshooting",
+            "company": "IT Services Inc.",
+            "location": "San Francisco"
+        },
+        {
+            "title": "Database Administrator",
+            "Skills": "SQL, PL/SQL, Database, Administration, Troubleshooting",
+            "company": "Data Management Co.",
+            "location": "Seattle"
+        },
+        {
+            "title": "Technical Writer",
+            "Skills": "Technical Writing, Writing, Communication",
+            "company": "Tech Publications",
+            "location": "Boston"
+        },
+        {
+            "title": "Mobile Developer",
+            "Skills": "Mobile, Programming, Java, C++, Android, iOS",
+            "company": "App Development LLC",
+            "location": "Los Angeles"
+        },
+        {
+            "title": "Test Engineer",
+            "Skills": "Test cases, Testing, Test Engineering, Automation, Coding",
+            "company": "Quality Assurance Solutions",
+            "location": "Chicago"
+        },
+        {
+            "title": "Network Engineer",
+            "Skills": "Networking, Troubleshooting, System, Hardware, Administration",
+            "company": "Networking Services Inc.",
+            "location": "Washington D.C."
+        },
+        {
+            "title": "Project Manager",
+            "Skills": "Project Management, Schedule, Workflow, Presentations, MS Project, Visio",
+            "company": "Project Management Co.",
+            "location": "London"
+        },
+        {
+            "title": "Software Developer",
+            "Skills": "Programming, Coding, Java, C, C++, ASP, SQL",
+            "company": "Software Development Corp.",
+            "location": "Paris"
+        }
+    ]
+}

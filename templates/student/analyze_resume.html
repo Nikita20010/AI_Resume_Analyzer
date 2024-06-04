@@ -1,0 +1,93 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+<br><br>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 class="panel-title">Resume Analysis candidate Details</h6>
+    </div>
+   
+   
+  
+
+    <center><h1></h1><hr style="border: 5px;"></center>
+   
+    <table class="table table-hover" id="dev-table">
+        <thead>
+          <tr>
+  
+            <th>Candidate Name</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Skills</th>
+
+
+          </tr>
+        </thead>
+        
+                <tr>
+                  <td>{{candidate_name }}</td>
+                  <td>{{ Email }} </td>
+                  <td>{{Mobile_Number }}</td>
+                  <td>{{ Skills }} </td>
+                </tr>
+        
+      </table>
+    
+</div>
+        
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 class="panel-title">--- Recommended Jobs ---</h6>
+    </div>
+            
+          </table><table class="table table-hover" id="dev-table">
+            <thead>
+              <tr>
+      
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Matched Skills</th>
+    
+    
+              </tr>
+            </thead>
+            {% for job in recommended_jobs %}
+                    <tr>
+                       
+                      <td>- {{ job.title }}</td>
+                      <td>{{ job.company }} </td>
+                      <td>{{ job.location }}</td>
+                      <td>{{ job.Skills|join:", " }}</td>
+
+                    </tr>
+            {% endfor %}
+
+          </table>
+   </div>         
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}

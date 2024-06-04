@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+
+  <title></title>
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br>
+  <center>
+    <h3 class='alert alert-success' style="margin-bottom:0px;">Rank Board</h3>
+  </center>
+  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+    
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+        </div>
+        
+        <table class="table table-hover" id="dev-table">
+          <thead>
+            <tr>
+    
+              <th>Rank</th>
+              <th>Student Name</th>
+              <th>Average Marks</th>
+            </tr>
+          </thead>
+          {% for student_data in sorted_students %}
+                  <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ student_data.student.user.first_name }} {{ student_data.student.user.last_name }}</td>
+                    <td>{{ student_data.average_marks }}</td>
+                  </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+<br><br><br>
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>

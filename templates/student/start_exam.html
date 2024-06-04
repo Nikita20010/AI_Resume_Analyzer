@@ -1,0 +1,82 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<div class="jumbotron my-4">
+    <form class="form" autocomplete="off" onsubmit="return saveAns()" action="/student/calculate-marks" method="POST" id="examForm">
+        {% csrf_token %}
+        <h1 style="text-align: center;">{{ course.course_name }}</h1>
+        <div id="timer" style="text-align: center;"></div>
+        {% for q in questions %}
+        <h3 class="text-info">{{ forloop.counter }}. {{ q.question }}</h3><h4 style="text-align: right;">[Marks {{ q.marks }}]</h4>
+        <input type="hidden" name="csrfmiddlewaretoken" value="C24rUotmdHawVQJL3KrqiWxvti8UffOFYUc8TRbZtLt36AVLdP3jbkzUVe3beRAa">
+        <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option1 }}" value="Option1">
+            <label class="form-check-label" for="option1">{{ q.option1 }}</label>
+        </div>
+        <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option2 }}" value="Option2">
+            <label class="form-check-label" for="option2">{{ q.option2 }}</label>
+        </div>
+        <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option3 }}" value="Option3">
+            <label class="form-check-label" for="option3">{{ q.option3 }}</label>
+        </div>
+        <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option4 }}" value="Option4">
+            <label class="form-check-label" for="option4">{{ q.option4 }}</label>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">Submit</button>
+    </form>
+</div>
+
+<script>
+    var timer;
+    var totalSeconds = 10; // 5 minutes
+
+    function startTimer() {
+        timer = setInterval(function () {
+            totalSeconds--;
+            var minutes = Math.floor(totalSeconds / 60);
+            var seconds = totalSeconds % 60;
+            document.getElementById('timer').innerHTML = 'Time Remaining: ' + minutes + 'm ' + seconds + 's';
+            if (totalSeconds <= 0) {
+                clearInterval(timer);
+                alert('Time up! Submitting your answers automatically.');
+                document.getElementById('submitBtn').click(); // Click the submit button
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        startTimer(); // Start the timer when the page loads
+    };
+
+    function saveAns() {
+        var ele = document.getElementsByTagName('input');
+        for (i = 0; i < ele.length; i++) {
+            if (ele[i].type = "radio") {
+                if (ele[i].checked) {
+                    setCookie(ele[i].name, ele[i].value, 3)
+                }
+            }
+        }
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+</script>
+
+<br><br><br><br><br><br>
+{% endblock content %}

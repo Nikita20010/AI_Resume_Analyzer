@@ -1,0 +1,40 @@
+{
+    "text": {
+        "name": "Adhiksha Thorat",
+        "email": "asthorat@mitaoe.ac.in",
+        "mobile_number": "8850492990",
+        "skills": [
+            "Engineering",
+            "Css",
+            "International",
+            "Computer science",
+            "Android",
+            "System",
+            "Php",
+            "Algorithms",
+            "Audio",
+            "Machine learning",
+            "Mysql",
+            "Sql",
+            "Html",
+            "Lifecycle",
+            "Python",
+            "Github",
+            "Website",
+            "Programming",
+            "Database",
+            "Mobile",
+            "C++",
+            "Cloud",
+            "Django",
+            "Analytics"
+        ],
+        "college_name": null,
+        "degree": null,
+        "designation": null,
+        "experience": null,
+        "company_names": null,
+        "no_of_pages": 3,
+        "total_experience": 0
+    }
+}
